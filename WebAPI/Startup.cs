@@ -1,4 +1,7 @@
-﻿using Core.Utilities.Security.Encryption;
+﻿using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
+using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -57,7 +60,7 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.ConfigureCustomExceptionMiddleware();
+            //app.ConfigureCustomExceptionMiddleware();
 
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
